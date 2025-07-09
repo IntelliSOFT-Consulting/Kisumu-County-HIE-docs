@@ -1,0 +1,12 @@
+---
+title: "Client Registry"
+---
+
+# Client Registry (CR)
+
+The Client Registry uniquely identifies individuals across participating systems in Kisumu County.
+
+## Features
+- Patient Identity Matching
+- MPI via FHIR `Patient` resources
+- Demographic de-duplication

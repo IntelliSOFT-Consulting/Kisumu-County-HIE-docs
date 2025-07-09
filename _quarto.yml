@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: "Kisumu Health Information Exchange (HIE)"
+  navbar:
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Client Registry"
+        file: cr/index.qmd
+      - text: "Shared Health Record"
+        file: shr/index.qmd
+
+format:
+  html:
+    theme: default
+    css: styles.css

@@ -1,0 +1,11 @@
+---
+title: "Shared Health Record"
+---
+
+# Shared Health Record (SHR)
+
+The SHR stores longitudinal health data across systems, including lab results, encounters, and immunizations.
+
+## Standards Used
+- FHIR (Observation, Encounter, Condition, etc.)
+- IPS (International Patient Summary)

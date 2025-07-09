@@ -1,0 +1,7 @@
+---
+title: "SHR Data Model"
+---
+
+# SHR Data Model
+
+This section describes the SHR data structures and key FHIR resources.

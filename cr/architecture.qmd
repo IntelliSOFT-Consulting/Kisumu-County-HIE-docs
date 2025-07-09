@@ -1,0 +1,7 @@
+---
+title: "CR Architecture"
+---
+
+# CR Architecture
+
+Details about the architecture of the Client Registry go here.

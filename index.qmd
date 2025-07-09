@@ -1,0 +1,7 @@
+---
+title: "Welcome to Kisumu HIE"
+---
+
+# Kisumu Health Information Exchange
+
+This documentation provides technical and architectural guidance for the Kisumu HIE, covering the Client Registry (CR) and Shared Health Record (SHR).
