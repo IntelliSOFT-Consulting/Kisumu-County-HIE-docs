@@ -1,0 +1,49 @@
+# Quarto output
+/_site/
+*.html
+*.pdf
+*.docx
+
+# Quarto cache and temporary files
+.quarto/
+.quarto-cache/
+*.log
+*.aux
+*.out
+*.toc
+
+# Common OS/system files
+.DS_Store
+Thumbs.db
+
+# VSCode and JetBrains IDEs
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+.venv/
+venv/
+pip-log.txt
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Node.js (if you use Quarto extensions or build tools)
+node_modules/
+dist/
+build/
+
+# Other logs or temp
+*.tmp
+*.log
+*.bak
