@@ -1,0 +1,81 @@
+---
+title: "Client Registration Process"
+---
+
+## Overview
+
+The client registration process in Kisumu HIE supports multiple channels including facility-based registration and self-registration via WhatsApp.
+
+## Registration Channels
+
+### 1. Facility-Based Registration
+
+Healthcare facilities can register clients through:
+- EMR integration
+- Web-based registration portal
+- Mobile registration application
+
+### 2. Self-Registration via WhatsApp
+
+Clients can self-register through an interactive WhatsApp workflow:
+1. Initiate registration by messaging the service
+2. Provide basic demographic information
+3. Consent to data sharing
+4. Receive unique identifier
+
+<!-- [INSERT DIAGRAM: Registration Channels Workflow] -->
+
+## Core Data Elements
+
+Required fields for registration:
+
+| Field | Description | Validation |
+|-------|-------------|------------|
+| First Name | Legal first name | Required |
+| Last Name | Legal last name | Required |
+| Date of Birth | ISO 8601 format | Required |
+| Gender | As per FHIR valueset | Required |
+| Phone Number | E.164 format | Required |
+| National ID | Government ID number | Optional |
+
+## Required Identifiers
+
+### Supported ID Types
+- UPI (Unique Patient Identifier)
+- National ID
+- Passport
+- Birth Certificate
+
+### ID Format Requirements
+- UPI Format: CR[YYYYMMDD][GENDER][RANDOM]
+- National ID: 8 digits
+- Passport: Standard passport format
+- Birth Certificate: Registry number
+
+## Data Validation Rules
+
+### Contact Information
+- Phone numbers must be in E.164 format
+- At least one emergency contact required
+- Valid Kenyan address required
+
+### Facility Information
+- Managing organization must be registered
+- Facility code must be active
+- Provider ID required for facility registration
+
+## Consent Management
+
+All registrations require explicit consent for:
+- Data collection
+- Data sharing within HIE network
+- Communication via SMS/WhatsApp
+
+<!-- [INSERT DIAGRAM: Consent Workflow] -->
+
+## Duplicate Prevention
+
+The system employs multiple strategies to prevent duplicate registrations:
+- Probabilistic matching algorithms
+- Weighted scoring of demographic elements
+- Manual review process for potential matches

@@ -1,0 +1,158 @@
+---
+title: "SHR API Reference"
+format:
+  html:
+    toc: true
+    code-fold: true
+---
+
+## API Overview
+
+FHIR R4 compliant API for clinical data exchange.
+
+Base URL: `https://api.kisumu-hie.org/shr/fhir/r4`
+
+## Authentication
+
+OAuth2 authentication required:
+```bash
+Authorization: Bearer <access_token>
+```
+
+## Key Endpoints
+
+### Clinical Encounters
+
+<div class="api-endpoint">
+**POST** `/Encounter`
+
+Create new encounter record.
+
+**Request:**
+```json
+{
+  "resourceType": "Encounter",
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB"
+  },
+  "subject": {
+    "reference": "Patient/pat123"
+  }
+}
+```
+</div>
+
+### Observations
+
+<div class="api-endpoint">
+**POST** `/Observation`
+
+Record clinical observations.
+
+**Request:**
+```json
+{
+  "resourceType": "Observation",
+  "status": "final",
+  "code": {
+    "coding": [{
+      "system": "http://loinc.org",
+      "code": "8867-4",
+      "display": "Heart rate"
+    }]
+  },
+  "valueQuantity": {
+    "value": 80,
+    "unit": "beats/minute"
+  }
+}
+```
+</div>
+
+## Clinical Data Endpoints
+
+### 1. Encounter & Observations
+
+<div class="api-endpoint">
+**POST** `/Encounter`
+
+Create encounters with related observations. Supports:
+- Ultrasound profiles
+- ANC profiles
+- PNC data points
+
+**Example Request (Ultrasound):**
+```json
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [{
+    "fullUrl": "urn:uuid:enc-us-001",
+    "resource": {
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "reasonCode": {
+        "coding": [{
+          "system": "http://fhir.kisumuhealth.co.ke/fhir/CodeSystem/encounter-servicetype-cs",
+          "code": "ultrasound-profile",
+          "display": "Ultrasound Profile"
+        }]
+      },
+      "subject": {
+        "reference": "Patient/CR20020607J4630879"
+      }
+    }
+  }]
+}
+```
+</div>
+
+### 2. Search Endpoints
+
+<div class="api-endpoint">
+**GET** `/Observation`
+
+Multiple search options:
+
+1. **By UPI & Code:**
+   `/Observation?subject={upi}&code={code}`
+
+2. **By Encounter:**
+   `/Observation?encounter={encounterId}`
+
+3. **By Client Registry ID:**
+   `/Observation?patient={clientRegistryId}`
+
+**GET** `/Encounter`
+
+Search encounters by:
+1. **UPI & Reason Code:**
+   `/Encounter?subject={upi}&reason-code={code}`
+
+2. **UPI Only:**
+   `/Encounter?subject={upi}`
+
+3. **Reason Code Only:**
+   `/Encounter?reason-code={code}`
+</div>
+
+## Error Handling
+
+Standard FHIR OperationOutcome responses for errors:
+```json
+{
+  "resourceType": "OperationOutcome",
+  "issue": [{
+    "severity": "error",
+    "code": "invalid",
+    "diagnostics": "Invalid observation code"
+  }]
+}
+```

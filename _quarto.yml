@@ -1,18 +1,49 @@
 project:
   type: website
+  output-dir: _site
 
 website:
-  title: "Kisumu Health Information Exchange (HIE)"
+  title: "Kisumu HIE"
   navbar:
+    background: primary
     left:
       - text: "Home"
         file: index.qmd
       - text: "Client Registry"
-        file: cr/index.qmd
+        menu:
+          - text: "Overview"
+            file: cr/index.qmd
+          - text: "Registration Process"
+            file: cr/registration.qmd
+          # - text: "Search & Matching"
+            # file: cr/search.qmd
+          - text: "API Reference"
+            file: cr/api.qmd
       - text: "Shared Health Record"
-        file: shr/index.qmd
+        menu:
+          - text: "Overview"
+            file: shr/index.qmd
+          - text: "Data Model"
+            file: shr/data-model.qmd
+          - text: "Clinical Workflows"
+            file: shr/workflows.qmd
+          - text: "Interoperability"
+            file: shr/interop.qmd
+          - text: "API Reference"
+            file: shr/api.qmd
 
 format:
   html:
-    theme: default
+    theme: 
+      light: flatly
+      dark: darkly
     css: styles.css
+    toc: true
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
+    code-copy: true
+    highlight-style: github
+    include-in-header:
+      - text: |
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">

@@ -1,0 +1,103 @@
+---
+title: "Clinical Workflows"
+format:
+  html:
+    toc: true
+---
+
+# Clinical Workflows
+
+## Patient Care Scenarios
+
+### 1. Outpatient Visit
+1. Patient registration/lookup
+2. Vital signs recording
+3. Clinical notes documentation
+4. Order entry (labs, medications)
+5. Results review
+6. Care plan updates
+
+### 2. Referral Management
+1. Referral creation
+2. Referral transmission
+3. Receiving facility workflow
+4. Referral feedback
+5. Close referral loop
+
+<!-- [INSERT DIAGRAM: Referral Workflow] -->
+
+### 3. Laboratory Process
+1. Order creation
+2. Sample collection
+3. Results entry
+4. Results validation
+5. Results delivery
+
+## Integration Points
+
+- EMR systems
+- Laboratory systems
+- Pharmacy systems
+- Imaging systems
+- mHealth applications
+
+## Clinical Decision Support
+
+- Drug-drug interactions
+- Allergy alerts
+- Care guidelines
+- Preventive care reminders
+
+## Example Workflows
+
+### 1. Antenatal Care (ANC) Profile
+1. Initial registration
+2. Record vital signs and measurements
+3. Document LMP and EDD
+4. Record ultrasound findings
+5. Schedule follow-up visits
+
+### 2. Postnatal Care (PNC) Profile
+1. Document delivery outcomes
+2. Record maternal vital signs
+3. Document newborn assessment
+4. Schedule immunizations
+5. Plan follow-up care
+
+![ANC/PNC Workflow](../ANC.jpg)
+
+## Clinical Service Types
+
+### Maternal Health
+1. **ANC Profile**
+   - Initial assessment
+   - Follow-up visits
+   - Risk assessment
+   - Birth planning
+
+2. **Ultrasound Services**
+   - Fetal assessment
+   - Growth monitoring
+   - Anomaly screening
+   - Position checking
+
+3. **PNC Profile**
+   - Maternal recovery
+   - Newborn care
+   - Breastfeeding support
+   - Immunization planning
+
+## Data Collection Timepoints
+
+### ANC Timeline
+- First Visit (Before 12 weeks)
+- Second Visit (24-28 weeks)
+- Third Visit (32 weeks)
+- Fourth Visit (36 weeks)
+- Additional visits as needed
+
+### PNC Timeline
+- 24 hours post-delivery
+- 7 days post-delivery
+- 6 weeks post-delivery
+- Additional follow-up as needed
