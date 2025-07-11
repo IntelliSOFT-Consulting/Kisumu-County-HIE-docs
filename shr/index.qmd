@@ -4,8 +4,37 @@ title: "Shared Health Record"
 
 # Shared Health Record (SHR)
 
-The SHR stores longitudinal health data across systems, including lab results, encounters, and immunizations.
+## Overview
 
-## Standards Used
-- FHIR (Observation, Encounter, Condition, etc.)
-- IPS (International Patient Summary)
+The Shared Health Record (SHR) serves as the centralized clinical data repository for the Kisumu HIE, enabling healthcare providers to access patient medical history across facilities.
+
+## Key Features
+
+- Longitudinal health record storage
+- Clinical document management
+- Healthcare facility registry integration
+- Provider registry integration
+- Terminology services
+
+## Supported Clinical Data
+
+The SHR supports storage and retrieval of:
+
+- Laboratory results
+- Medications and prescriptions
+- Clinical encounters
+- Problem lists
+- Allergies
+- Immunizations
+- Vital signs
+- Clinical notes
+- Referrals
+
+![SHR Data Flow Architecture](../SHR.png)
+
+## Standards Compliance
+
+- HL7 FHIR R4
+- IHE XDS.b
+- OpenHIE Architecture
+- WHO International Patient Summary

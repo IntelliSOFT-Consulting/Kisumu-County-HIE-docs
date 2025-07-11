@@ -1,7 +1,92 @@
 ---
 title: "SHR Data Model"
+format:
+  html:
+    toc: true
 ---
 
-# SHR Data Model
+## FHIR Resources
 
-This section describes the SHR data structures and key FHIR resources.
+### Core Resources
+- Patient
+- Encounter
+- Observation
+- Condition
+- Medication
+- MedicationRequest
+- Immunization
+- DiagnosticReport
+- ServiceRequest
+
+### Extensions
+Custom FHIR extensions for local requirements:
+- Community Health Worker Assignment
+- Traditional Medicine
+- Local Health Program Enrollment
+
+## FHIR Profiles
+
+### Encounter Profiles
+- KSM Patient Encounter (`ksm-patient-encounter`)
+- ANC Visit Profile
+- PNC Visit Profile
+- Ultrasound Visit Profile
+
+### Observation Profiles
+- Vital Signs
+- Lab Results
+- Ultrasound Findings
+- ANC Measurements
+- PNC Assessments
+
+## Custom Extensions
+
+### Community Health Worker
+```json
+{
+  "url": "http://fhir.kisumuhealth.co.ke/StructureDefinition/chw-assignment",
+  "valueReference": {
+    "reference": "Practitioner/CHW123"
+  }
+}
+```
+
+### Program Enrollment
+```json
+{
+  "url": "http://fhir.kisumuhealth.co.ke/StructureDefinition/program-enrollment",
+  "valueCodeableConcept": {
+    "coding": [{
+      "system": "http://fhir.kisumuhealth.co.ke/CodeSystem/programs",
+      "code": "anc",
+      "display": "Antenatal Care Program"
+    }]
+  }
+}
+```
+
+## Data Relationships
+
+<!-- [INSERT DIAGRAM: Resource Relationships] -->
+
+## Terminologies
+
+### Code Systems
+- SNOMED CT
+- ICD-10
+- LOINC
+- RxNorm
+- Local terminology mappings
+
+### Value Sets
+- Encounter types
+- Service delivery locations
+- Provider roles
+- Program codes
+
+## Validation
+
+- FHIR profiles
+- Terminology bindings
+- Required elements
+- Business rules

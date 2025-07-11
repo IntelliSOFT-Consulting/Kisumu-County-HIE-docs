@@ -4,4 +4,41 @@ title: "Welcome to Kisumu HIE"
 
 # Kisumu Health Information Exchange
 
-This documentation provides technical and architectural guidance for the Kisumu HIE, covering the Client Registry (CR) and Shared Health Record (SHR).
+This documentation provides technical and architectural guidance for the Kisumu Health Information Exchange (HIE) project, developed in partnership with Wonder4Health.
+
+## Project Overview
+
+The Kisumu HIE aims to establish a robust Health Information Exchange infrastructure to facilitate seamless data sharing and management within the healthcare ecosystem in Kisumu County.
+
+## Core Components
+
+### Client Registry (CR)
+The Client Registry handles patient registration, unique identification, and management of demographic data within the Kisumu HIE. [Learn more](cr/index.qmd)
+
+### Shared Health Record (SHR) 
+The SHR serves as a central repository for longitudinal patient clinical data, enabling data sharing across healthcare facilities. [Learn more](shr/index.qmd)
+
+![High-level HIE Architecture Overview](HIE-workflow.jpg)
+
+## Architecture Overview
+
+### System Components
+- Client Registry (CR): Patient identity management
+- Shared Health Record (SHR): Clinical data repository
+- Security Layer: OpenHIM & OAuth2
+- Terminology Services: FHIR CodeSystems and ValueSets
+
+### Integration Patterns
+- REST APIs (FHIR R4)
+- Message Queue for async operations
+- Real-time notifications
+- Batch synchronization
+
+![HIE Architecture Components](HIE Architecture.png)
+
+## Standards & Compliance
+
+- HL7 FHIR R4
+- OpenHIE Architecture
+- IHE Profiles
+- Kenya eHealth Standards

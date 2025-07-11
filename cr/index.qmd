@@ -1,12 +1,26 @@
 ---
-title: "Client Registry"
+title: "Client Registry Overview"
 ---
 
 # Client Registry (CR)
 
-The Client Registry uniquely identifies individuals across participating systems in Kisumu County.
+The Client Registry is a core component of the Kisumu HIE that uniquely identifies individuals across participating systems in Kisumu County.
 
-## Features
-- Patient Identity Matching
+## Purpose
+
+The CR handles patient registration, unique identification, and management of demographic data within the Kisumu HIE. It ensures consistent patient identification across all participating healthcare facilities.
+
+## Key Features
+
+- Client Registration via multiple channels (WhatsApp, clinic)
+- Patient Identity Matching using National ID or phone number
 - MPI via FHIR `Patient` resources
 - Demographic de-duplication
+- Consent management
+- Unique beneficiary number generation
+
+![Client Registry Component Architecture](../client registry.jpg)
+
+## Integration Partners
+
+Primary integration with Wonder4Health system for patient demographic synchronization.
